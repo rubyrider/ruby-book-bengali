@@ -6,7 +6,7 @@
 
 ২। ইন্সটেন্স ভ্যারিয়েবল \(Instance Variable\)
 
-৩। ক্লাস ভ্যারিয়েবল্স
+৩। ক্লাস ভ্যারিয়েবল্স \(Class variable\)
 
 ৪। কান্সটেন্স \(Constant variable\)
 
@@ -15,6 +15,4 @@
 ৬। প্রিডিফাইন্ড ভ্যারিয়েবল্স \(Predefined variable\)
 
 ৭। প্রিডিফাইন্ড কান্সটেন্ট \(Predefined constant\)
-
-
 
