@@ -5,5 +5,5 @@
 * [১.২। রুবির ইন্সটলেশন](c1-2-ruby-installation.md)
 * [১.৩। প্রথম প্রোগ্রাম এবং আই আর বি \(IRB\) পরিচিতি।](c1.3-first-program.md)
 * [১.২\|  IRB বিস্তারিত](c1-4-interactive-ruby-details.md)
-* [2.1 Variables in Ruby](c2-1-variables-in-ruby.md)
+* [২.১। রুবির ভ্যারিয়েবল এবং কন্সটেন্ট](c2-1-variables-in-ruby.md)
 
