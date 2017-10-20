@@ -6,9 +6,83 @@ IRB একটু ইন্টারেক্টিভ রুবি টুল। 
 
 আমরা ইতিমধ্যে জেনেছি যে IRB এর পুরো অর্থ- Interactive Ruby।  এখন আমরা  IRB এর কমান্ড লাইন অপশন গুলো দেখবো। এই অপশনগুলো দেখতে হলে আপনাকী নিচের কমান্ডটি চালাতে হবে। আমরা আমাদের টার্মিনাল বা ব্যাশে যদি টাইপ দেখি-
 
-### `$ irb help`![](/assets/Screen Shot 2017-10-18 at 3.15.39 PM.png)
+### `$ irb help`
 
-আমরা এই অপশনগুলোতে কিছু ফিচার চেক করবো। আর বাকিগুলো আমরা পরবর্তিতে টপিকের প্রয়োজন অনুযায়ি আলোচনা করবো।
+আমরা এই কমান্ডের জন্য যে অপশনগুলো IRB তে আছে আামরা কিছু অপশন সম্পর্কে এখন জানতে পারবো।
+
+`Usage:  irb.rb [options] [programfile] [arguments]`
+
+`  -f		    Suppress read of ~/.irbrc`
+
+`  -m		    Bc mode (load mathn, fraction or matrix are available)`
+
+``  -d                Set $DEBUG to true (same as `ruby -d')``
+
+``  -r load-module    Same as `ruby -r'``
+
+`  -I path           Specify $LOAD_PATH directory`
+
+``  -U                Same as `ruby -U```
+
+``  -E enc            Same as `ruby -E```
+
+``  -w                Same as `ruby -w```
+
+``  -W[level=2]       Same as `ruby -W```
+
+`  --context-mode n  Set n[0-3] to method to create Binding Object,`
+
+`                    when new workspace was created`
+
+`  --echo            Show result(default)`
+
+`  --noecho          Don't show result`
+
+``  --inspect	    Use `inspect' for output (default except for bc mode)``
+
+`  --noinspect	    Don't use inspect for output`
+
+`  --readline        Use Readline extension module`
+
+`  --noreadline	    Don't use Readline extension module`
+
+`  --prompt prompt-mode/--prompt-mode prompt-mode`
+
+`		    Switch prompt mode. Pre-defined prompt modes are`
+
+``		    `default', `simple', `xmp' and `inf-ruby'``
+
+`  --inf-ruby-mode   Use prompt appropriate for inf-ruby-mode on emacs.`
+
+`		    Suppresses --readline.`
+
+`  --sample-book-mode/--simple-prompt`
+
+`                    Simple prompt mode`
+
+`  --noprompt        No prompt mode`
+
+`  --single-irb      Share self with sub-irb.`
+
+`  --tracer          Display trace for each execution of commands.`
+
+`  --back-trace-limit n`
+
+`		    Display backtrace top n and tail n. The default`
+
+`		    value is 16.`
+
+`  --irb_debug n	    Set internal debug level to n (not for popular use)`
+
+`  --verbose         Show details`
+
+`  --noverbose       Don't show details`
+
+`  -v, --version	    Print the version of irb`
+
+`  -h, --help        Print help`
+
+`  --                Separate options of irb from the list of command-line args`
 
 ### -r  অপশনের কাজ
 
@@ -20,23 +94,48 @@ IRB একটু ইন্টারেক্টিভ রুবি টুল। 
 
 এবার নিচের কমান্ডটি আমরা টার্মিনালে চালালে-
 
-$ irb -r ./your-ruby-file.rb![](/assets/Screen Shot 2017-10-18 at 3.33.07 PM.png)এইবার আমরা IRB তে @hello নামক ভ্যারিয়েবলটি টাইপ করে এন্টার চালি। দেখা যাবে এটা দেখাচ্ছে 'Hello Irb' নামক টেস্ট আউটপুট। 
+$ irb -r ./your-ruby-file.rb
+
+`irfanahmed@Irfans-MacBook-Pro code-examples (master)*$ irb -r ./c1-4-irb-with-ruby-file.rb`
+
+`irb(main):001:0> @hello`
+
+`=> "Hello IRB"`
+
+`irb(main):002:0>`
+
+এইবার আমরা IRB তে @hello নামক ভ্যারিয়েবলটি টাইপ করে এন্টার চালি। দেখা যাবে এটা দেখাচ্ছে 'Hello Irb' নামক টেস্ট আউটপুট।
 
 ### -f অপশনের কাজ
 
 কোন রুবি ফাইলকে রিড করে একজিট করবে।  আমরা যদি একটি রুবি ফাইল এই মোডে রান করি IRB দিয়ে তাহলে নিচের মত করে রেস্পন্স আসবে।
 
-> irfanahmed@Irfans-MacBook-Pro code-examples \(master\)\*$ irb -f ./c1-4-irb-with-ruby-file.rb
->
-> c1-4-irb-with-ruby-file.rb\(main\):001:0&gt; @hello = 'Hello IRB'
->
-> =&gt; "Hello IRB"
->
-> c1-4-irb-with-ruby-file.rb\(main\):002:0&gt;
->
-> irfanahmed@Irfans-MacBook-Pro code-examples \(master\)\*$
+`irfanahmed@Irfans-MacBook-Pro code-examples (master)*$ irb -f ./c1-4-irb-with-ruby-file.rb`
 
+`c1-4-irb-with-ruby-file.rb(main):001:0> @hello = 'Hello IRB'`
 
+`=> "Hello IRB"`
+
+`c1-4-irb-with-ruby-file.rb(main):002:0>`
+
+`irfanahmed@Irfans-MacBook-Pro code-examples (master)*$`
+
+### -m ম্যাথ অপশন
+
+এই অপশনটি ব্যাবহার করলে আপনার আই আর বি রুবির ম্যাথ রিলেটেড মডিউওলগুলো লোড করবে। যেমন মেট্রিক্স মডিউলটি আপনি ইউজ করতে পারবেন।  
+`irfanahmed@Irfans-MacBook-Pro code-examples (master)*$ irb -m`
+
+`irb(main):001:0> Matrix`
+
+`=> Matrix`
+
+`irb(main):002:0>`
+
+### -v অপশন
+
+`irfanahmed@Irfans-MacBook-Pro code-examples (master)*$ irb -v`
+
+`irb 0.9.6(09/06/30)`
 
 
 
