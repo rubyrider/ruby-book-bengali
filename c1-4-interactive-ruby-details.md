@@ -12,77 +12,77 @@ IRB একটু ইন্টারেক্টিভ রুবি টুল। 
 
 `Usage:  irb.rb [options] [programfile] [arguments]`
 
-`  -f		    Suppress read of ~/.irbrc`
+`-f            Suppress read of ~/.irbrc`
 
-`  -m		    Bc mode (load mathn, fraction or matrix are available)`
+`-m            Bc mode (load mathn, fraction or matrix are available)`
 
-``  -d                Set $DEBUG to true (same as `ruby -d')``
+``-d                Set $DEBUG to true (same as `ruby -d')``
 
-``  -r load-module    Same as `ruby -r'``
+``-r load-module    Same as `ruby -r'``
 
-`  -I path           Specify $LOAD_PATH directory`
+`-I path           Specify $LOAD_PATH directory`
 
-``  -U                Same as `ruby -U```
+```  -U                Same as``ruby -U\`\`\`
 
-``  -E enc            Same as `ruby -E```
+```  -E enc            Same as``ruby -E\`\`\`
 
-``  -w                Same as `ruby -w```
+```  -w                Same as``ruby -w\`\`\`
 
-``  -W[level=2]       Same as `ruby -W```
+```  -W[level=2]       Same as``ruby -W\`\`\`
 
-`  --context-mode n  Set n[0-3] to method to create Binding Object,`
+`--context-mode n  Set n[0-3] to method to create Binding Object,`
 
-`                    when new workspace was created`
+`when new workspace was created`
 
-`  --echo            Show result(default)`
+`--echo            Show result(default)`
 
-`  --noecho          Don't show result`
+`--noecho          Don't show result`
 
-``  --inspect	    Use `inspect' for output (default except for bc mode)``
+``--inspect        Use `inspect' for output (default except for bc mode)``
 
-`  --noinspect	    Don't use inspect for output`
+`--noinspect        Don't use inspect for output`
 
-`  --readline        Use Readline extension module`
+`--readline        Use Readline extension module`
 
-`  --noreadline	    Don't use Readline extension module`
+`--noreadline        Don't use Readline extension module`
 
-`  --prompt prompt-mode/--prompt-mode prompt-mode`
+`--prompt prompt-mode/--prompt-mode prompt-mode`
 
-`		    Switch prompt mode. Pre-defined prompt modes are`
+`Switch prompt mode. Pre-defined prompt modes are`
 
-``		    `default', `simple', `xmp' and `inf-ruby'``
+```default', `simple', `xmp' and `inf-ruby'``
 
-`  --inf-ruby-mode   Use prompt appropriate for inf-ruby-mode on emacs.`
+`--inf-ruby-mode   Use prompt appropriate for inf-ruby-mode on emacs.`
 
-`		    Suppresses --readline.`
+`Suppresses --readline.`
 
-`  --sample-book-mode/--simple-prompt`
+`--sample-book-mode/--simple-prompt`
 
-`                    Simple prompt mode`
+`Simple prompt mode`
 
-`  --noprompt        No prompt mode`
+`--noprompt        No prompt mode`
 
-`  --single-irb      Share self with sub-irb.`
+`--single-irb      Share self with sub-irb.`
 
-`  --tracer          Display trace for each execution of commands.`
+`--tracer          Display trace for each execution of commands.`
 
-`  --back-trace-limit n`
+`--back-trace-limit n`
 
-`		    Display backtrace top n and tail n. The default`
+`Display backtrace top n and tail n. The default`
 
-`		    value is 16.`
+`value is 16.`
 
-`  --irb_debug n	    Set internal debug level to n (not for popular use)`
+`--irb_debug n        Set internal debug level to n (not for popular use)`
 
-`  --verbose         Show details`
+`--verbose         Show details`
 
-`  --noverbose       Don't show details`
+`--noverbose       Don't show details`
 
-`  -v, --version	    Print the version of irb`
+`-v, --version        Print the version of irb`
 
-`  -h, --help        Print help`
+`-h, --help        Print help`
 
-`  --                Separate options of irb from the list of command-line args`
+`--                Separate options of irb from the list of command-line args`
 
 ### -r  অপশনের কাজ
 
@@ -131,6 +131,22 @@ $ irb -r ./your-ruby-file.rb
 
 `irb(main):002:0>`
 
+
+
+### -- noinspect অপশন
+
+এই মুডে IRB ওপেন করলে আপনি স্ট্রিং ইন্সপেক্ট মুডে আউটপুট পাবেন না। নিচের উদাহারন থেকে বলতে পারি-
+
+irfanahmed@Irfans-MacBook-Pro code-examples \(master\)\*$ irb --noinspect
+
+`irb(main):001:0> "Hello"`
+
+`=> Hello`
+
+`irb(main):002:0>`
+
+
+
 ### -v অপশন
 
 `irfanahmed@Irfans-MacBook-Pro code-examples (master)*$ irb -v`
@@ -138,4 +154,6 @@ $ irb -r ./your-ruby-file.rb
 `irb 0.9.6(09/06/30)`
 
 
+
+আপাতত আমাদের এই কয়টা অপশন কাজে লাগবে। তবে আপনারা বাকি অপশনগুলো নিজে নিজে ট্রাই করে অবশ্যই দেখবেন।
 
